@@ -1,10 +1,18 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use
 import "package:expansion_tile_card/expansion_tile_card.dart";
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+/*
+WELCOME TO MY FLUTTER JOURNEY BY LONE AADIL
+Instagram: Lone_aadil_official
+Btech CSE
+Whatsapp :7006246463
+
+*/
 void main() {
-  runApp(DicePage());
+  runApp(MyStaggeredGridView());
 }
 
 class GeekForGeeks extends StatelessWidget {
@@ -468,6 +476,7 @@ class _DicePageState extends State<DicePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.green,
         appBar: AppBar(
@@ -481,6 +490,67 @@ class _DicePageState extends State<DicePage> {
         body: Center(
           child: Row(
             children: [
+              /*
+              SHOW DIALOG 
+
+              */
+              // showDialog(
+              //   context: context,
+              //  builder: (BuildContext context){
+              //    return Expanded(
+              //      child: AlertDialog(
+              //        title: Text('Welcome'),
+              //        content: Text('GeeksForGeeks'),
+              //        actions: [
+              //          FlatButton(
+              //            textColor: Colors.black,
+              //            onPressed: (){},
+              //           child: Text('CANCEL'),
+              //           ),
+              //           FlatButton(
+              //             textColor: Colors.black,
+              //             onPressed: (){},
+              //            child: Text('ACCEPT'),
+              //            ),
+              //        ],
+              //        ),
+              //        );
+              //  }
+              //  );
+              /* 
+              SIMPLE ALERT DIALOG 
+               */
+              // SimpleDialog(
+              //   title: Text('GeeksforGeeks'),
+              //   children: [
+              //     SimpleDialogOption(
+              //       onPressed: () {},
+              //       child: Text('Option 1'),
+              //     ),
+              //     SimpleDialogOption(
+              //       onPressed: () {},
+              //       child: Text('option 2'),
+              //     ),
+              //   ],
+              // ),
+              /*
+              ALERT DIALOG CODE
+              */
+              // AlertDialog(
+              //   title: Text('Welcome'),
+              //   content: Text('Geeks for Geeks'),
+              //   actions: [
+              //     FlatButton(
+              //         textColor: Colors.black,
+              //         onPressed: () {},
+              //         child: Text('CANCEL')),
+              //     FlatButton(
+              //       textColor: Colors.black,
+              //       onPressed: () {},
+              //       child: Text('ACCEPT'),
+              //     )
+              //   ],
+              // ),
               Expanded(
                 flex: 2,
                 child: TextButton(
@@ -492,6 +562,144 @@ class _DicePageState extends State<DicePage> {
                 child: TextButton(
                   onPressed: () {},
                   child: Image.asset('assets/images/lollipop.jpg'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+MY PROGRESS INDICATOR CODE
+*/
+class MyProgressIndigator extends StatelessWidget {
+  const MyProgressIndigator({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text('Hello AADI'),
+            backgroundColor: Color.fromARGB(255, 57, 167, 167),
+            centerTitle: true,
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(
+                  backgroundColor: Colors.redAccent,
+                  value: 0.3,
+                  valueColor: AlwaysStoppedAnimation(Colors.green),
+                  strokeWidth: 10,
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                LinearProgressIndicator(
+                  value: 0.7,
+                  backgroundColor: Colors.redAccent,
+                  valueColor: AlwaysStoppedAnimation(Colors.green),
+                  minHeight: 20,
+                ),
+              ],
+            ),
+          ),
+        ));
+  }
+}
+
+/*
+Staggered grid view code
+first add the depenceny in pupspec.yaml
+*/
+class MyStaggeredGridView extends StatelessWidget {
+  const MyStaggeredGridView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('hello grid'),
+          centerTitle: true,
+        ),
+        body: Container(
+          height: 720.0,
+          color: Colors.red,
+          child: StaggeredGrid.count(
+            crossAxisCount: 4,
+            mainAxisSpacing: 4,
+            crossAxisSpacing: 4,
+            children: [
+              StaggeredGridTile.count(
+                crossAxisCellCount: 4,
+                mainAxisCellCount: 4,
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  clipBehavior: Clip.antiAlias,
+                  child: Image.network(
+                    'https://picsum.photos/seed/image019/500/800',
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2,
+                child: Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Image.network(
+                    'https://picsum.photos/seed/image018/500/900',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2,
+                child: Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Image.network(
+                    'https://picsum.photos/seed/image017/500/600',
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2,
+                child: Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Image.network(
+                    'https://picsum.photos/seed/image016/500/700',
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 2,
+                child: Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Image.network(
+                    'https://picsum.photos/seed/image015/500/500',
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ],
