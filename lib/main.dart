@@ -3,6 +3,11 @@ import "package:expansion_tile_card/expansion_tile_card.dart";
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_designs/pages/google_fonts.dart';
+import 'package:flutter_ui_designs/pages/lazy_loader.dart';
+import 'package:flutter_ui_designs/pages/orientation_builder.dart';
+import 'package:flutter_ui_designs/pages/sketlon_text.dart';
+import 'package:flutter_ui_designs/pages/themes.dart';
 
 /*
 WELCOME TO MY FLUTTER JOURNEY BY LONE AADIL
@@ -12,7 +17,7 @@ Whatsapp :7006246463
 
 */
 void main() {
-  runApp(MyStaggeredGridView());
+  runApp(MyOrientationBuilder());
 }
 
 class GeekForGeeks extends StatelessWidget {
@@ -54,7 +59,12 @@ class GeekForGeeks extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          title: Text('Hello aadil'),
+          title: Text(
+            'Hello aadil',
+            style: TextStyle(
+              fontFamily: 'Pacifico',
+            ),
+          ),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
           backgroundColor: Colors.green,
