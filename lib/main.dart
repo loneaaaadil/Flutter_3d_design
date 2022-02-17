@@ -3,10 +3,17 @@ import "package:expansion_tile_card/expansion_tile_card.dart";
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_designs/pages/animated_splash.dart';
 import 'package:flutter_ui_designs/pages/google_fonts.dart';
+import 'package:flutter_ui_designs/pages/hero_animation.dart';
+import 'package:flutter_ui_designs/pages/hinge_animation.dart';
 import 'package:flutter_ui_designs/pages/lazy_loader.dart';
+import 'package:flutter_ui_designs/pages/lottie_animation.dart';
 import 'package:flutter_ui_designs/pages/orientation_builder.dart';
+import 'package:flutter_ui_designs/pages/physics_card_animation.dart';
+import 'package:flutter_ui_designs/pages/route_transition.dart';
 import 'package:flutter_ui_designs/pages/sketlon_text.dart';
+import 'package:flutter_ui_designs/pages/splash.dart';
 import 'package:flutter_ui_designs/pages/themes.dart';
 
 /*
@@ -17,7 +24,10 @@ Whatsapp :7006246463
 
 */
 void main() {
-  runApp(MyOrientationBuilder());
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: PhysicsAnimation(),
+  ));
 }
 
 class GeekForGeeks extends StatelessWidget {
