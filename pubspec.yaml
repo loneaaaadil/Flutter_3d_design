@@ -45,6 +45,9 @@ dev_dependencies:
   route_transitions: ^2.0.1
   animated_splash_screen: ^1.2.0
   lottie: ^1.2.2
+  url_launcher: any
+  http: ^0.13.4
+  image_picker: ^0.6.3+4
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

@@ -4,6 +4,9 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_designs/pages/animated_splash.dart';
+import 'package:flutter_ui_designs/pages/form_validation.dart';
+import 'package:flutter_ui_designs/pages/gallery_access.dart';
+import 'package:flutter_ui_designs/pages/gestures.dart';
 import 'package:flutter_ui_designs/pages/google_fonts.dart';
 import 'package:flutter_ui_designs/pages/hero_animation.dart';
 import 'package:flutter_ui_designs/pages/hinge_animation.dart';
@@ -15,6 +18,8 @@ import 'package:flutter_ui_designs/pages/route_transition.dart';
 import 'package:flutter_ui_designs/pages/sketlon_text.dart';
 import 'package:flutter_ui_designs/pages/splash.dart';
 import 'package:flutter_ui_designs/pages/themes.dart';
+import 'package:flutter_ui_designs/pages/url_page.dart';
+import 'package:flutter_ui_designs/pages/web_sockets.dart';
 
 /*
 WELCOME TO MY FLUTTER JOURNEY BY LONE AADIL
@@ -26,7 +31,7 @@ Whatsapp :7006246463
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: PhysicsAnimation(),
+    home: GalleryAccess(),
   ));
 }
 
@@ -370,269 +375,269 @@ class HorizontalList extends StatelessWidget {
 }
 
 //Expansion tile
-class ExpansionTileCard1 extends StatelessWidget {
-  const ExpansionTileCard1({
-    Key? key,
-  }) : super(key: key);
+// class ExpansionTileCard1 extends StatelessWidget {
+//   const ExpansionTileCard1({
+//     Key? key,
+//   }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'ExpansionTileCard',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: MyHomePage(title: 'Hello aadil'),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: 'ExpansionTileCard',
+//       theme: ThemeData(
+//         primarySwatch: Colors.green,
+//       ),
+//       home: MyHomePage(title: 'Hello aadil'),
+//     );
+//   }
+// }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({Key? key, required this.title}) : super(key: key);
+//   final String title;
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
+//   @override
+//   _MyHomePageState createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<ExpansionTileCardState> cardA = new GlobalKey();
-  final GlobalKey<ExpansionTileCardState> cardB = new GlobalKey();
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
-      ),
-      body: ListView(
-        padding: EdgeInsets.only(top: 10),
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
-            child: ExpansionTileCard(
-              borderRadius: BorderRadius.circular(20),
-              baseColor: Colors.pink,
-              expandedColor: Colors.blue,
-              // animateTrailing: true,
-              // initiallyExpanded: true,
-              key: cardB,
-              leading: CircleAvatar(
-                child: Icon(
-                  Icons.verified_user,
-                ),
-              ),
-              title: Text('Tap to expand !'),
-              subtitle: Text('It has the CFG Logo1 .'),
-              children: [
-                Divider(
-                  color: Colors.blue,
-                  thickness: 12.0,
-                  height: 1.0,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                      vertical: 8.0,
-                    ),
-                    child: Image.asset('assets/images/car.jpg'),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Divider(
-            thickness: 2.0,
-            height: 1.0,
-            color: Colors.lightBlue,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
-            child: ExpansionTileCard(
-              borderRadius: BorderRadius.circular(20),
-              baseColor: Colors.pink,
-              expandedColor: Color.fromARGB(255, 100, 169, 226),
-              // animateTrailing: true,
-              key: cardA,
-              leading: CircleAvatar(
-                child: Icon(Icons.verified_user),
-              ),
-              title: Text('tap to expand 2'),
-              subtitle: Text('It has the cfg logo 2'),
-              children: [
-                Divider(
-                  color: Colors.blue,
-                  thickness: 12.0,
-                  height: 1.0,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                      child: Image.asset('assets/images/lollipop.jpg')),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+// class _MyHomePageState extends State<MyHomePage> {
+//   final GlobalKey<ExpansionTileCardState> cardA = new GlobalKey();
+//   final GlobalKey<ExpansionTileCardState> cardB = new GlobalKey();
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(widget.title),
+//         shape:
+//             RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+//       ),
+//       body: ListView(
+//         padding: EdgeInsets.only(top: 10),
+//         children: [
+//           Padding(
+//             padding: EdgeInsets.symmetric(horizontal: 12.0),
+//             child: ExpansionTileCard(
+//               borderRadius: BorderRadius.circular(20),
+//               baseColor: Colors.pink,
+//               expandedColor: Colors.blue,
+//               // animateTrailing: true,
+//               // initiallyExpanded: true,
+//               key: cardB,
+//               leading: CircleAvatar(
+//                 child: Icon(
+//                   Icons.verified_user,
+//                 ),
+//               ),
+//               title: Text('Tap to expand !'),
+//               subtitle: Text('It has the CFG Logo1 .'),
+//               children: [
+//                 Divider(
+//                   color: Colors.blue,
+//                   thickness: 12.0,
+//                   height: 1.0,
+//                 ),
+//                 Align(
+//                   alignment: Alignment.center,
+//                   child: Padding(
+//                     padding: EdgeInsets.symmetric(
+//                       horizontal: 16.0,
+//                       vertical: 8.0,
+//                     ),
+//                     child: Image.asset('assets/images/car.jpg'),
+//                   ),
+//                 )
+//               ],
+//             ),
+//           ),
+//           Divider(
+//             thickness: 2.0,
+//             height: 1.0,
+//             color: Colors.lightBlue,
+//           ),
+//           Padding(
+//             padding: EdgeInsets.symmetric(horizontal: 12.0),
+//             child: ExpansionTileCard(
+//               borderRadius: BorderRadius.circular(20),
+//               baseColor: Colors.pink,
+//               expandedColor: Color.fromARGB(255, 100, 169, 226),
+//               // animateTrailing: true,
+//               key: cardA,
+//               leading: CircleAvatar(
+//                 child: Icon(Icons.verified_user),
+//               ),
+//               title: Text('tap to expand 2'),
+//               subtitle: Text('It has the cfg logo 2'),
+//               children: [
+//                 Divider(
+//                   color: Colors.blue,
+//                   thickness: 12.0,
+//                   height: 1.0,
+//                 ),
+//                 Align(
+//                   alignment: Alignment.center,
+//                   child: Padding(
+//                       padding:
+//                           EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+//                       child: Image.asset('assets/images/lollipop.jpg')),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
-class DicePage extends StatefulWidget {
-  const DicePage({Key? key}) : super(key: key);
+// class DicePage extends StatefulWidget {
+//   const DicePage({Key? key}) : super(key: key);
 
-  @override
-  _DicePageState createState() => _DicePageState();
-}
+//   @override
+//   _DicePageState createState() => _DicePageState();
+// }
 
-class _DicePageState extends State<DicePage> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.green,
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'Dice Page',
-            style: TextStyle(color: Colors.green),
-          ),
-          backgroundColor: Colors.white,
-        ),
-        body: Center(
-          child: Row(
-            children: [
-              /*
-              SHOW DIALOG 
+// class _DicePageState extends State<DicePage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: Scaffold(
+//         backgroundColor: Colors.green,
+//         appBar: AppBar(
+//           centerTitle: true,
+//           title: Text(
+//             'Dice Page',
+//             style: TextStyle(color: Colors.green),
+//           ),
+//           backgroundColor: Colors.white,
+//         ),
+//         body: Center(
+//           child: Row(
+//             children: [
+//               /*
+//               SHOW DIALOG
 
-              */
-              // showDialog(
-              //   context: context,
-              //  builder: (BuildContext context){
-              //    return Expanded(
-              //      child: AlertDialog(
-              //        title: Text('Welcome'),
-              //        content: Text('GeeksForGeeks'),
-              //        actions: [
-              //          FlatButton(
-              //            textColor: Colors.black,
-              //            onPressed: (){},
-              //           child: Text('CANCEL'),
-              //           ),
-              //           FlatButton(
-              //             textColor: Colors.black,
-              //             onPressed: (){},
-              //            child: Text('ACCEPT'),
-              //            ),
-              //        ],
-              //        ),
-              //        );
-              //  }
-              //  );
-              /* 
-              SIMPLE ALERT DIALOG 
-               */
-              // SimpleDialog(
-              //   title: Text('GeeksforGeeks'),
-              //   children: [
-              //     SimpleDialogOption(
-              //       onPressed: () {},
-              //       child: Text('Option 1'),
-              //     ),
-              //     SimpleDialogOption(
-              //       onPressed: () {},
-              //       child: Text('option 2'),
-              //     ),
-              //   ],
-              // ),
-              /*
-              ALERT DIALOG CODE
-              */
-              // AlertDialog(
-              //   title: Text('Welcome'),
-              //   content: Text('Geeks for Geeks'),
-              //   actions: [
-              //     FlatButton(
-              //         textColor: Colors.black,
-              //         onPressed: () {},
-              //         child: Text('CANCEL')),
-              //     FlatButton(
-              //       textColor: Colors.black,
-              //       onPressed: () {},
-              //       child: Text('ACCEPT'),
-              //     )
-              //   ],
-              // ),
-              Expanded(
-                flex: 2,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Image.asset('assets/images/car.jpg'),
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () {},
-                  child: Image.asset('assets/images/lollipop.jpg'),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+//               */
+//               // showDialog(
+//               //   context: context,
+//               //  builder: (BuildContext context){
+//               //    return Expanded(
+//               //      child: AlertDialog(
+//               //        title: Text('Welcome'),
+//               //        content: Text('GeeksForGeeks'),
+//               //        actions: [
+//               //          FlatButton(
+//               //            textColor: Colors.black,
+//               //            onPressed: (){},
+//               //           child: Text('CANCEL'),
+//               //           ),
+//               //           FlatButton(
+//               //             textColor: Colors.black,
+//               //             onPressed: (){},
+//               //            child: Text('ACCEPT'),
+//               //            ),
+//               //        ],
+//               //        ),
+//               //        );
+//               //  }
+//               //  );
+//               /*
+//               SIMPLE ALERT DIALOG
+//                */
+//               // SimpleDialog(
+//               //   title: Text('GeeksforGeeks'),
+//               //   children: [
+//               //     SimpleDialogOption(
+//               //       onPressed: () {},
+//               //       child: Text('Option 1'),
+//               //     ),
+//               //     SimpleDialogOption(
+//               //       onPressed: () {},
+//               //       child: Text('option 2'),
+//               //     ),
+//               //   ],
+//               // ),
+//               /*
+//               ALERT DIALOG CODE
+//               */
+//               // AlertDialog(
+//               //   title: Text('Welcome'),
+//               //   content: Text('Geeks for Geeks'),
+//               //   actions: [
+//               //     FlatButton(
+//               //         textColor: Colors.black,
+//               //         onPressed: () {},
+//               //         child: Text('CANCEL')),
+//               //     FlatButton(
+//               //       textColor: Colors.black,
+//               //       onPressed: () {},
+//               //       child: Text('ACCEPT'),
+//               //     )
+//               //   ],
+//               // ),
+//               Expanded(
+//                 flex: 2,
+//                 child: TextButton(
+//                   onPressed: () {},
+//                   child: Image.asset('assets/images/car.jpg'),
+//                 ),
+//               ),
+//               Expanded(
+//                 child: TextButton(
+//                   onPressed: () {},
+//                   child: Image.asset('assets/images/lollipop.jpg'),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-/*
-MY PROGRESS INDICATOR CODE
-*/
-class MyProgressIndigator extends StatelessWidget {
-  const MyProgressIndigator({Key? key}) : super(key: key);
+// /*
+// MY PROGRESS INDICATOR CODE
+// */
+// class MyProgressIndigator extends StatelessWidget {
+//   const MyProgressIndigator({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Hello AADI'),
-            backgroundColor: Color.fromARGB(255, 57, 167, 167),
-            centerTitle: true,
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircularProgressIndicator(
-                  backgroundColor: Colors.redAccent,
-                  value: 0.3,
-                  valueColor: AlwaysStoppedAnimation(Colors.green),
-                  strokeWidth: 10,
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                LinearProgressIndicator(
-                  value: 0.7,
-                  backgroundColor: Colors.redAccent,
-                  valueColor: AlwaysStoppedAnimation(Colors.green),
-                  minHeight: 20,
-                ),
-              ],
-            ),
-          ),
-        ));
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//         debugShowCheckedModeBanner: false,
+//         home: Scaffold(
+//           appBar: AppBar(
+//             title: Text('Hello AADI'),
+//             backgroundColor: Color.fromARGB(255, 57, 167, 167),
+//             centerTitle: true,
+//           ),
+//           body: Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: [
+//                 CircularProgressIndicator(
+//                   backgroundColor: Colors.redAccent,
+//                   value: 0.3,
+//                   valueColor: AlwaysStoppedAnimation(Colors.green),
+//                   strokeWidth: 10,
+//                 ),
+//                 SizedBox(
+//                   height: 25,
+//                 ),
+//                 LinearProgressIndicator(
+//                   value: 0.7,
+//                   backgroundColor: Colors.redAccent,
+//                   valueColor: AlwaysStoppedAnimation(Colors.green),
+//                   minHeight: 20,
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ));
+//   }
+// }
 
 /*
 Staggered grid view code
